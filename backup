@@ -1,0 +1,235 @@
+
+// import 'package:flutter/material.dart';
+// import 'package:url_launcher/url_launcher.dart';
+// import 'package:carousel_slider/carousel_slider.dart';
+
+// void main() {
+//   runApp(const MyApp());
+// }
+
+// class MyApp extends StatelessWidget {
+//   const MyApp({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Towards Sustainable Solutions',
+//       theme: ThemeData(
+//         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+//         useMaterial3: true,
+//       ),
+//       home: const HomePage(),
+//     );
+//   }
+// }
+
+// class HomePage extends StatelessWidget {
+//   const HomePage({super.key});
+
+//   void _launchURL(String url) async {
+//     final Uri uri = Uri.parse(url);
+//     if (!await launchUrl(uri, mode: LaunchMode.externalApplication)) {
+//       throw 'Could not launch $url';
+//     }
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text('Towards Sustainable Solutions'),
+//       ),
+//       body: SingleChildScrollView(
+//         child: Column(
+//           children: [
+//             CarouselSlider(
+//               items: [
+//                 Image.asset('assets/image.png', fit: BoxFit.cover),
+//                 Image.asset('assets/dks.png', fit: BoxFit.cover),
+//                 Image.asset('assets/eks.png', fit: BoxFit.cover),
+//                 Image.asset('assets/gok.png', fit: BoxFit.cover),
+//                 Image.asset('assets/PCB.jpg', fit: BoxFit.cover),
+//               ],
+//               options: CarouselOptions(
+//                 height: 200.0,
+//                 enlargeCenterPage: true,
+//                 autoPlay: true,
+//                 aspectRatio: 16 / 9,
+//                 autoPlayCurve: Curves.fastOutSlowIn,
+//                 enableInfiniteScroll: true,
+//                 autoPlayAnimationDuration: const Duration(seconds: 2),
+//                 viewportFraction: 0.8,
+//               ),
+//             ),
+//             const SizedBox(height: 20),
+//             Padding(
+//               padding: const EdgeInsets.all(8.0),
+//               child: Column(
+//                 crossAxisAlignment: CrossAxisAlignment.start,
+//                 children: [
+//                   const Text(
+//                     'Quick Links',
+//                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+//                   ),
+//                   const SizedBox(height: 10),
+//                   ListTile(
+//                     leading: const Icon(Icons.link),
+//                     title: const Text('KSPCB Initiatives'),
+//                     onTap: () => _launchURL('https://kspcb.karnataka.gov.in/'),
+//                   ),
+//                   ListTile(
+//                     leading: const Icon(Icons.link),
+//                     title: const Text('Need For treating Seawage Water for Construction'),
+//                     onTap: () => _launchURL('https://indianexpress.com/article/cities/bangalore/treated-sewage-water-for-construction-karnataka-pollution-board-approaches-bis-to-fix-parameters-8140721/#:~:text=%2C%E2%80%9D%20he%20said.-,As%20part%20of%20discouraging%20the%20use%20of%20groundwater%20and%20water,construction%20purposes%20in%20the%20city./'),
+//                   ),
+//                   ListTile(
+//                     leading: const Icon(Icons.link),
+//                     title: const Text('Benifits of Selling Treated Water'),
+//                     onTap: () => _launchURL('https://www.thehindu.com/news/cities/bangalore/water-woes-apartments-in-bengaluru-can-now-sell-50-of-treated-water-from-in-situ-stps/article67990318.ece'),
+//                   ),
+//                   ListTile(
+//                     leading: const Icon(Icons.link),
+//                     title: const Text('Total Treatment of Treated Water'),
+//                     onTap: () => _launchURL('https://welllabs.org/bengalurus-decentralised-sewage-treatment-plants/'),
+//                   ),
+//                 ],
+//               ),
+//             ),
+//             const SizedBox(height: 20),
+//             ElevatedButton(
+//               onPressed: () {
+//                 Navigator.push(
+//                   context,
+//                   MaterialPageRoute(builder: (context) => const TreatedWaterPage()),
+//                 );
+//               },
+//               child: const Text('Use of Treated Water'),
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// class TreatedWaterPage extends StatelessWidget {
+//   const TreatedWaterPage({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text('Use of Treated Water'),
+//       ),
+//       body: Center(
+//         child: Column(
+//           mainAxisAlignment: MainAxisAlignment.center,
+//           children: [
+//             ElevatedButton(
+//               onPressed: () {
+//                 Navigator.push(
+//                   context,
+//                   MaterialPageRoute(builder: (context) => const BlankPage(title: 'Legislative')),
+//                 );
+//               },
+//               child: const Text('Legislative'),
+//             ),
+//             ElevatedButton(
+//               onPressed: () {
+//                 Navigator.push(
+//                   context,
+//                   MaterialPageRoute(builder: (context) => const AvailabilityPage()),
+//                 );
+//               },
+//               child: const Text('Availability'),
+//             ),
+//             ElevatedButton(
+//               onPressed: () {
+//                 Navigator.push(
+//                   context,
+//                   MaterialPageRoute(builder: (context) => const NeedForWaterPage()),
+//                 );
+//               },
+//               child: const Text('Need for Treated Water'),
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// class BlankPage extends StatelessWidget {
+//   final String title;
+//   const BlankPage({super.key, required this.title});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text(title),
+//       ),
+//       body: const Center(
+//         child: Text('Content Coming Soon!'),
+//       ),
+//     );
+//   }
+// }
+
+// class AvailabilityPage extends StatelessWidget {
+//   const AvailabilityPage({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text('Availability Projects'),
+//       ),
+//       body: ListView(
+//         children: const [
+//           ListTile(
+//             title: Text('Project A'),
+//             subtitle: Text('Details about Project A'),
+//           ),
+//           ListTile(
+//             title: Text('Project B'),
+//             subtitle: Text('Details about Project B'),
+//           ),
+//           ListTile(
+//             title: Text('Project C'),
+//             subtitle: Text('Details about Project C'),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
+
+// class NeedForWaterPage extends StatelessWidget {
+//   const NeedForWaterPage({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text('Nearby Need for Treated Water'),
+//       ),
+//       body: ListView(
+//         children: const [
+//           ListTile(
+//             title: Text('Project X - 5 KLD'),
+//             subtitle: Text('Distance: 5 km'),
+//           ),
+//           ListTile(
+//             title: Text('Project Y - 10 KLD'),
+//             subtitle: Text('Distance: 10 km'),
+//           ),
+//           ListTile(
+//             title: Text('Project Z - 15 KLD'),
+//             subtitle: Text('Distance: 8 km'),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
